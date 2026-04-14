@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architects of the Future Fellowship - Application Banner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .banner-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Banner 1: Wide Format (1200x300) - For Google Form cover image */
+        .banner-wide {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 1;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dbeafe 50%, #fef3c7 100%);
+        }
+
+        .banner-wide::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 50%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(5, 150, 105, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(2rem);
+        }
+
+        .banner-wide::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -5%;
+            width: 40%;
+            height: 130%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(2rem);
+        }
+
+        .banner-wide-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 4rem;
+        }
+
+        .banner-wide h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 3rem;
+            line-height: 1.2;
+            color: #111827;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .banner-wide .accent {
+            color: #059669;
+        }
+
+        .banner-wide p {
+            font-size: 1.125rem;
+            color: #4b5563;
+            max-width: 50%;
+        }
+
+        /* Banner 2: Square Format (800x800) - Alternative */
+        .banner-square {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dbeafe 100%);
+        }
+
+        .banner-square::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -20%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(5, 150, 105, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(2rem);
+        }
+
+        .banner-square-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .banner-square h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.5rem;
+            line-height: 1.3;
+            color: #111827;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .banner-square .accent {
+            color: #059669;
+        }
+
+        .banner-square p {
+            font-size: 1rem;
+            color: #4b5563;
+            margin-bottom: 2rem;
+        }
+
+        .banner-square .cta {
+            background: #059669;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.125rem;
+            transition: background 0.3s;
+        }
+
+        .banner-square .cta:hover {
+            background: #047857;
+        }
+
+        /* Banner 3: Vertical (600x1000) - Mobile/Social */
+        .banner-vertical {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 0.6 / 1;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            background: linear-gradient(to bottom, #f0fdf4 0%, #dbeafe 100%);
+        }
+
+        .banner-vertical::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(5, 150, 105, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(2rem);
+        }
+
+        .banner-vertical-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            padding-top: 4rem;
+        }
+
+        .banner-vertical h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            line-height: 1.3;
+            color: #111827;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .banner-vertical .accent {
+            color: #059669;
+        }
+
+        .banner-vertical p {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-bottom: 3rem;
+        }
+
+        .banner-vertical .cta {
+            background: #059669;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-family: 'Crimson Text', serif;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .banner-vertical .cta:hover {
+            background: #047857;
+        }
+
+        /* Instructions */
+        .instructions {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .instructions h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .instructions ol {
+            margin-left: 2rem;
+            color: #4b5563;
+            line-height: 1.8;
+        }
+
+        .instructions li {
+            margin-bottom: 1rem;
+        }
+
+        .instructions code {
+            background: #f3f4f6;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+        }
+
+        .color-guide {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .color-guide h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .color-swatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .swatch {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .swatch-box {
+            height: 80px;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .swatch-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: #111827;
+        }
+
+        .swatch-code {
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <!-- Wide Banner -->
+    <div class="banner-container">
+        <h2 style="margin-bottom: 1rem; font-family: 'Crimson Text', serif; color: #111827;">Wide Banner (1200×300) - For Google Form Cover</h2>
+        <div class="banner-wide">
+            <div class="banner-wide-content">
+                <h1>Ready to build the <span class="accent">future?</span></h1>
+                <p>Apply to the Architects of the Future Fellowship. Work on the problems that matter. Join 500+ leaders shaping what's next.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Square Banner -->
+    <div class="banner-container">
+        <h2 style="margin-bottom: 1rem; font-family: 'Crimson Text', serif; color: #111827;">Square Banner (800×800) - Alternative Format</h2>
+        <div class="banner-square">
+            <div class="banner-square-content">
+                <h1>Build the <span class="accent">future</span> with us</h1>
+                <p>Architects of the Future Fellowship</p>
+                <a href="#" class="cta">Apply Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vertical Banner -->
+    <div class="banner-container">
+        <h2 style="margin-bottom: 1rem; font-family: 'Crimson Text', serif; color: #111827;">Vertical Banner (600×1000) - Mobile/Social</h2>
+        <div style="max-width: 300px;">
+            <div class="banner-vertical">
+                <div class="banner-vertical-content">
+                    <h1>Join the <span class="accent">Fellowship</span></h1>
+                    <p>Work on humanity's biggest challenges. Build solutions. Lead change.</p>
+                    <a href="#" class="cta">Apply</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instructions -->
+    <div class="instructions">
+        <h2>How to Use These Banners</h2>
+        <ol>
+            <li><strong>For Google Forms:</strong> Take a screenshot of the wide banner above. Open your Google Form → Settings → Customize theme → Upload image as header.</li>
+            <li><strong>For Email/Social:</strong> Screenshot any banner and resize as needed. Share across your network.</li>
+            <li><strong>For Landing Page:</strong> Copy the HTML code for any banner and add to a custom page before your form link.</li>
+            <li><strong>For Custom Use:</strong> Right-click any banner → "Save image as" → Use in presentations, documents, or announcements.</li>
+        </ol>
+    </div>
+
+    <!-- Color Guide -->
+    <div class="color-guide">
+        <h2>Color Palette</h2>
+        <p style="color: #4b5563; margin-bottom: 1.5rem;">Use these colors to maintain consistency across all materials:</p>
+        <div class="color-swatches">
+            <div class="swatch">
+                <div class="swatch-box" style="background: #059669;"></div>
+                <div class="swatch-name">Primary Green</div>
+                <div class="swatch-code">#059669</div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-box" style="background: #111827;"></div>
+                <div class="swatch-name">Dark Slate</div>
+                <div class="swatch-code">#111827</div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-box" style="background: #4b5563;"></div>
+                <div class="swatch-name">Medium Gray</div>
+                <div class="swatch-code">#4b5563</div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-box" style="background: #f0fdf4;"></div>
+                <div class="swatch-name">Light Green</div>
+                <div class="swatch-code">#f0fdf4</div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-box" style="background: #dbeafe;"></div>
+                <div class="swatch-name">Light Blue</div>
+                <div class="swatch-code">#dbeafe</div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-box" style="background: #ffffff; border: 2px solid #e5e7eb;"></div>
+                <div class="swatch-name">White</div>
+                <div class="swatch-code">#ffffff</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
